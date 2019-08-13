@@ -53,3 +53,5 @@ else
 fi
 
 echo $ROS_PACKAGE_PATH
+
+telnet towel.blinkenlights.nl
