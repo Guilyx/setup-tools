@@ -26,10 +26,30 @@ fi
 
 sudo apt install python-rosinstall python-rosinstall-generator python-wstool build-essential
 
+if [ $SHELL = "/usr/bin/zsh" ]
+then
+	source ~/.zshrc
+elif [ $SHELL = "/bin/bash" ]
+then
+	source ~/.bashrc
+
+else 
+	echo "ERROR"
+fi
+
 mkdir -p ~/catkin_ws/src
 cd ~/catkin_ws/
 catkin_make
 
-source devel/setup.zsh
+if [ $SHELL = "/usr/bin/zsh" ]
+then
+	echo "source /catkin_ws/devel/setup.zsh" >> ~/.zshrc
+elif [ $SHELL = "/bin/bash" ]
+then
+	echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
+
+else 
+	echo "ERROR : SHELL ENVIRONMENT NOT SUPPORTED (ZSH and BASH only !!)"
+fi
 
 echo $ROS_PACKAGE_PATH
