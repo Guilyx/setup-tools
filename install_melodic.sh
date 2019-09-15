@@ -43,10 +43,10 @@ catkin_make
 
 if [ $SHELL = "/usr/bin/zsh" ]
 then
-	echo "source /catkin_ws/devel/setup.zsh" >> ~/.zshrc
+	echo "source ~/catkin_ws/devel/setup.zsh" >> ~/.zshrc
 elif [ $SHELL = "/bin/bash" ]
 then
-	echo "source /catkin_ws/devel/setup.bash" >> ~/.bashrc
+	echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 
 else 
 	echo "ERROR : SHELL ENVIRONMENT NOT SUPPORTED (ZSH and BASH only !!)"
